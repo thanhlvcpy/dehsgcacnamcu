@@ -19,7 +19,7 @@ bool cmt(int a, int b)
 int main()
 {
 	freopen("CHONXE.inp","r",stdin);
-	freopen("CHONXE.out","w",stdin);
+	freopen("CHONXE.out","w",stdout);
 	int n,m;
 	cin>>n>>m;
 	for(int i=1;i<=n;i++)
