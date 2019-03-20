@@ -18,20 +18,23 @@ bool cmt(int a, int b)
 }
 int main()
 {
-	freopen("CHONXE.inp","r",stdin);
-	freopen("CHONXE.out","w",stdout);
+	//freopen("CHONXE.inp","r",stdin);
+	///freopen("CHONXE.out","w",stdin);
 	int n,m;
 	cin>>n>>m;
 	for(int i=1;i<=n;i++)
 		cin>>d[i];
 	for(int i=1;i<=m;i++)
 		cin>>v[i];
-	for(int i=1;i<=n;i++)
+	for(int i=1;i<=m;i++)
 		id[i]=i;
-	sort(id+1,id+n+1,cmp);
+	sort(id+1,id+m+1,cmp);
 	sort(v+1,v+m+1);
 	sort(d+1,d+n+1,cmt);
 	int t=0;
+	for(int i=1;i<=m;i++)
+		cout<<id[i]<<" ";
+	cout<<endl;
 	for(int i=1;i<=n;i++)
 		t=t+d[i]*v[i];
 	cout<<t<<endl;
