@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int a[1000000],b[500000],soptmanga,dem=0;;
+int a[1600000],b[500000],soptmanga,dem=0;;
 void print1(int d)
 {
 	for(int i=1;i<=d;i++)
