@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-;
+
 using namespace std;
 char t[100000];
 void print1(int n)
