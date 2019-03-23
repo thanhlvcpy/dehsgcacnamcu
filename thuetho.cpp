@@ -1,34 +1,39 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int c[101][101],a[10001],n,minn,tong=0;
+int c[101][101],a[10001],b[10001],n,minn,tong=0,tmin;
 bool kt[10001];
+void capnhat(int minn)
+{
+	for(int i=1;i<=n;i++)
+		b[i]=a[i];	// cap nhat cau hinh toi uu moi
+	tmin=minn;	// cap nhat chi phi cua phuong an
+}
 void printl()
 {
 	for(int i=1;i<=n;i++)
-		cout<<a[i]<<" ";
-	cout<<endl;
+		cout<<b[i]<<" ";
 }
 void backtrack(int t)
 {
-	if(t>n)
+	if(t>n&&minn>tong)
 		{
 			minn=tong;
-			tong=0;
-			printl();
+			capnhat(minn);
 		}
 	for(int i=1;i<=n;i++)
-		if(minn>tong)	// dat nhanh can
-			if(kt[i]==true)
+	{
+		if(minn>=tong&& kt[i]==true)// dat nhanh can
 			{
 				kt[i]=false;
 				a[t]=i;
 				tong = tong+c[t][a[t]];
-				//cout<<tong<<endl;
-				cout<<minn<<endl;
 				backtrack(t+1);
+				tong=tong-c[t][a[t]];
 				kt[i]=true;
 			}
+	}
+
 }
 int main()
 {
@@ -44,5 +49,7 @@ int main()
 		}
 	//cout<<minn<<endl;
 	backtrack(1);
+	cout<<tmin<<endl;
+	printl();
     return 0;
 }
