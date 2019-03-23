@@ -2,12 +2,6 @@
 
 using namespace std;
 int n,b,a[10000],c[10000],backt[10000],vitri[10000],tong=0,tonggiatri=-1,dem;
-void printl()
-{
-	for(int i=1;i<=n;i++)
-		cout<<backt[i]<<" ";
-	cout<<endl;
-}
 int tinhtonggiatri()
 {
 	int ti=0;
@@ -40,7 +34,6 @@ void backtrack(int t)
 	for(int i=0;i<=1;i++)
 		{
 			backt[t]=i;
-			//printl();
 			if(t==n&&tonggiatri<=tinhtonggiatri()&&tongtaii(t)<=b)
 				{
 
